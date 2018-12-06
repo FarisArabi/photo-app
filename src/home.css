@@ -1,0 +1,63 @@
+
+
+.container{
+	background: #EFF0F0;
+}
+
+.nav{
+	position: fixed;
+	background: #B2B2FF;
+	width: 73%;
+}
+
+.photo{
+	text-align: center;
+
+    
+}
+
+.ph-block{
+		margin-bottom: 40px;
+
+}
+
+.img{
+	width:250px;
+	height:250px;
+}
+
+.userName{
+	display: block;
+	margin-right: 250px;
+	padding-bottom: 4px;
+	font-style: oblique;
+	font-weight: bold;
+
+}
+
+.delbutt{
+	margin-right: 190px;
+	color: white;
+	background: #f44336;
+	margin-top: 3px;
+}
+
+.logOut{
+	background-color: #008CBA;
+	color: white;
+	margin-left: 20px;
+	display: inline;
+}
+
+.navUname{
+	display: inline;
+	
+	
+}
+.xxx{
+	display: inline;
+	margin-left: 370px;
+}
+.loader{
+	margin-left: 50px
+}
