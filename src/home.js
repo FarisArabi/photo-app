@@ -36,7 +36,6 @@ class Home extends Component {
             current =  users.find(user => {
              return user.userId === s ? user.name : null ;
         })
-            console.log('current', current);
        this.setState({name: current.name})
     });
     }
@@ -61,11 +60,8 @@ class Home extends Component {
         console.log('image loading ...')
     }
     upLoadSuccess = filename => {
-        console.log(filename);
-
         firebase.storage().ref('images').child(filename).getDownloadURL()
             .then((url) => {
-                console.log(url);
                 firebase.storage().ref('images').child(filename).getMetadata()
                     .then((res) =>{
                         console.log(res);
@@ -79,8 +75,6 @@ class Home extends Component {
                 })
                 db.collection('uploadImg').doc(doc.id).get()
                     .then((result) => {
-                        console.log('ress', result.data());
-
                         this.setState({
                             images: this.state.images.concat(result.data())
                         })
@@ -88,18 +82,10 @@ class Home extends Component {
             })
     }
     handleDelete = (e, img, i)=>{
-        console.log('clicked !!!',i);
-        console.log('clicked !!!',img);
-
-
         firebase.storage().ref('images').child(img.imageName).delete()
             .then((result) => {
-                        console.log('fucking deleted frome storage!!!!');
-
                 db.collection('uploadImg').doc(img.docRef).delete()
                     .then((result) => {
-                        console.log('fucking deleted frome database!!!!');
-
                         let updatedImages = this.state.images;
                         updatedImages.splice(i, 1);
                         this.setState({

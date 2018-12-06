@@ -21,17 +21,15 @@ class Login extends Component {
   login = (e) => {
     e.preventDefault();
     fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
-    }).catch((error) => {
-        console.log(error);
+    }).catch((error) => { 
+        alert(error.message)
       });
   }
 
   signup = (e) => {
     e.preventDefault();
     let userName = this.state.userName;
-    console.log("userName", userName);
     fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
-      console.log('user : ', u.user.uid);
       this.setState({userId: u.user.uid});
       if(u !== null) {
         fire.database().ref('Users').push({ 
@@ -42,7 +40,7 @@ class Login extends Component {
       }
     }).then((u)=> {})
     .catch((error) => {
-        console.log(error);
+        alert(error.message);
       })
   }
 
@@ -54,7 +52,7 @@ class Login extends Component {
     return (
        <div className="container" style={{ background: '#EFF0F0'}}>
        <br/>
-       <h1 style={{}}>Share you'r photos</h1>
+       <h1>Share you'r photos</h1>
        <br/>
        <br/>
     <form>
