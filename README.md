@@ -5,7 +5,7 @@
 Photo App
 
 ### Usage :
-    Share your photos with photo-app communitie
+    Share your photos with photo-app community.
 
 ### Tools :
 
